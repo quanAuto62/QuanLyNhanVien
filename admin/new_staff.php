@@ -1,6 +1,6 @@
 <?php include('../includes/header.php') ?>
 <?php
-// Check if the user is logged in
+// Kiểm tra người dùng đã đăng nhập chưa
 if (!isset($_SESSION['slogin']) || !isset($_SESSION['srole'])) {
     header('Location: ../index1.php');
     exit();
@@ -300,7 +300,7 @@ if ($userRole !== 'Manager' && $userRole !== 'Admin') {
                                 </div>
                             </div>
                             <!-- Main-body end -->
-                            <div id="styleSelector">
+                            <div >
 
                             </div>
                         </div>

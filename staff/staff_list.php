@@ -164,7 +164,7 @@ mysqli_stmt_close($stmt);
                                 </div>
                             </div>
                             <!-- Main body end -->
-                            <div id="styleSelector">
+                            <div >
 
                             </div>
                         </div>

@@ -17,13 +17,13 @@ if ($result->num_rows > 0) {
     }
 }
 
-// Check if the user is logged in
+// Kiểm tra người dùng đã đăng nhập chưa
 if (!isset($_SESSION['slogin']) || !isset($_SESSION['srole'])) {
     header('Location: ../index1.php');
     exit();
 }
 
-// Check if the user has the role of Manager or Admin
+// Kiểm tra role người dùng
 $userRole = $_SESSION['srole'];
 if ($userRole !== 'Manager' && $userRole !== 'Admin') {
     header('Location: ../index1.php');
@@ -437,7 +437,7 @@ if ($userRole !== 'Manager' && $userRole !== 'Admin') {
                             </div>
                             <!-- Main-body end -->
 
-                            <div id="styleSelector">
+                            <div >
 
                             </div>
                         </div>
@@ -675,7 +675,7 @@ if ($userRole !== 'Manager' && $userRole !== 'Admin') {
                         console.log(`RESPONSE HERE: ${responseObject}`);
                         console.log(`RESPONSE HERE: ${responseObject.message}`);
                         if (response && responseObject.status === 'success') {
-                            // Show success message
+                            // Hiển thị thông báo thành công
                             Swal.fire({
                                 icon: 'success',
                                 html: responseObject.message,

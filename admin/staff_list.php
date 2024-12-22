@@ -1,12 +1,12 @@
 <?php include('../includes/header.php') ?>
 <?php
-// Check if the user is logged in
+// Kiểm tra người dùng đã đăng nhập chưa
 if (!isset($_SESSION['slogin']) || !isset($_SESSION['srole'])) {
     header('Location: ../index1.php');
     exit();
 }
 
-// Check if the user has the role of Manager or Admin
+// Kiểm tra vai trò người dùng
 $userRole = $_SESSION['srole'];
 if ($userRole !== 'Manager' && $userRole !== 'Admin') {
     header('Location: ../index1.php');
@@ -14,10 +14,10 @@ if ($userRole !== 'Manager' && $userRole !== 'Admin') {
 }
 
 
-// Check if the department filter is set
+// Kiểm tra filter
 $departmentFilter = isset($_GET['department']) ? $_GET['department'] : 'Xem Tất Cả';
 
-// Initialize variables for the filter dropdown
+// Khởi tạo biến 
 $selectedDepartmentId = null;
 $selectedDepartmentName = 'Xem Tất Cả';
 
@@ -165,7 +165,7 @@ mysqli_stmt_close($stmt);
                                 </div>
                             </div>
                             <!-- Main body end -->
-                            <div id="styleSelector">
+                            <div >
 
                             </div>
                         </div>

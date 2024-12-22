@@ -211,7 +211,7 @@ while ($departmentRow = $departmentResult->fetch_assoc()) {
                                     <!-- Page-body end -->
                                     
                                 </div>
-                                <div id="styleSelector"> </div>
+                                <!-- <div > </div> -->
                             </div>
                         </div>
                     </div>

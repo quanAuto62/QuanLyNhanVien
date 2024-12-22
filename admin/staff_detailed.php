@@ -419,7 +419,7 @@ if ($userRole !== 'Manager' && $userRole !== 'Admin') {
                             </div>
                             <!-- Change password modal end-->
                             <!-- Main body end -->
-                            <div id="styleSelector">
+                            <div >
 
                             </div>
                         </div>

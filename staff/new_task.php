@@ -276,7 +276,7 @@ if ($userRole !== 'Staff' && $_SESSION['is_supervisor'] !== 1) {
                                 </div>
                             </div>
                             <!-- Main-body end -->
-                            <div id="styleSelector">
+                            <div >
 
                             </div>
                         </div>

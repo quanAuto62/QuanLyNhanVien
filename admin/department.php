@@ -7,7 +7,7 @@ if (!isset($_SESSION['slogin']) || !isset($_SESSION['srole'])) {
     exit();
 }
 
-// Check if the user has the role of Manager or Admin
+// Kiểm tra vai trò người dùng
 $userRole = $_SESSION['srole'];
 if ($userRole !== 'Manager' && $userRole !== 'Admin') {
     header('Location: ../index1.php');
@@ -17,7 +17,7 @@ if ($userRole !== 'Manager' && $userRole !== 'Admin') {
 
 $totalStaff = 0;
 
-// Assuming you have a database connection, fetch all departments
+// Lấy danh sách phòng ban
 $departmentQuery = $conn->prepare("SELECT * FROM tbldepartments");
 $departmentQuery->execute();
 $departmentResult = $departmentQuery->get_result();
@@ -30,7 +30,7 @@ while ($departmentRow = $departmentResult->fetch_assoc()) {
     $departmentDesc = $departmentRow['department_desc'];
     $createDate = $departmentRow['creation_date'];
 
-    // Fetch the count of staff in the department
+    // Lấy số lượng nhân viên trong phòng ban
     $staffQuery = $conn->prepare("SELECT COUNT(*) as staff_count FROM tblemployees WHERE department = ?");
     $staffQuery->bind_param("i", $departmentId);
     $staffQuery->execute();
@@ -40,7 +40,7 @@ while ($departmentRow = $departmentResult->fetch_assoc()) {
 
     $totalStaff += $staffCount;
 
-    // Fetch the count of managers in the department
+    // Lấy số lượng quản lý trong phòng ban
     $managerQuery = $conn->prepare("SELECT COUNT(*) as manager_count FROM tblemployees WHERE department = ? AND role = 'Manager'");
     $managerQuery->bind_param("i", $departmentId);
     $managerQuery->execute();
@@ -317,7 +317,7 @@ while ($departmentRow = $departmentResult->fetch_assoc()) {
                                 </div>
                             </div>
                             <!-- Main-body end -->
-                            <div id="styleSelector">
+                            <div >
 
                             </div>
                         </div>
