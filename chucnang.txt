@@ -1,0 +1,52 @@
+1. Admin:
+Quản lý phòng ban
+Quản lý nhân viên
+Quản lý nhiệm vụ
+
+2. Quản lý(Manager):
+Xem phòng ban
+Quản lý nhân viên(staff)
+Quản lý nhiệm vụ trong phòng ban của mình quản lý
+
+3. Nhân viên(Staff)
+Xem thông tin bản thân, 
+Xem nhiệm vụ
+
+AJAX{
+Các thành phần cơ bản của AJAX
+JavaScript:
+
+Xử lý các sự kiện (event) trên giao diện và thực hiện các thao tác gửi yêu cầu (request) đến máy chủ.
+XMLHttpRequest (XHR) hoặc Fetch API:
+
+Đối tượng/Phương pháp để giao tiếp giữa trình duyệt và máy chủ.
+Dữ liệu máy chủ trả về:
+
+Dữ liệu trả về có thể ở các định dạng như JSON, XML, hoặc HTML.
+HTML và CSS:
+
+Hiển thị nội dung được cập nhật từ dữ liệu AJAX.
+Máy chủ:
+
+Xử lý các yêu cầu AJAX và trả về dữ liệu phù hợp, thường thông qua các ngôn ngữ phía máy chủ như PHP, Python, Node.js.
+
+Ví dụ sử dụng AJAX
+Cập nhật danh sách sản phẩm khi chọn danh mục
+Người dùng chọn danh mục trong danh sách.
+AJAX gửi yêu cầu đến máy chủ để lấy danh sách sản phẩm của danh mục đó.
+Máy chủ trả về dữ liệu (JSON).
+JavaScript cập nhật danh sách sản phẩm trên giao diện mà không cần tải lại trang.
+
+
+}
+$.ajax({
+    url: 'department_functions.php',   // Đường dẫn tới file xử lý phía máy chủ.
+    type: 'post',                      // Phương thức HTTP được sử dụng (POST).
+    data: data,                        // Dữ liệu gửi đi (một object hoặc chuỗi JSON).
+    success: function(response) {      // Hàm callback khi yêu cầu thành công.
+        ...
+    },
+    error: function(jqXHR, textStatus, errorThrown) { 
+        ...                           // Hàm callback khi yêu cầu thất bại.
+    }
+});
